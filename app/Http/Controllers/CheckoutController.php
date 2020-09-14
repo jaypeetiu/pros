@@ -26,7 +26,7 @@ class CheckoutController extends Controller
         		'currency' => 'usd'
     		));
 
-    		return 'Charge successful, you get the course!';
+    		return 'Charge successful!';
 		}catch (\Exception $ex) {
     		return $ex->getMessage();
 		}

@@ -21,9 +21,7 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/plans', 'PlanController@index')->name('plans.index');
-    Route::get('/plan/{plan}', 'PlanController@show')->name('plans.show');
-    Route::post('/subscription', 'SubscriptionController@create')->name('subscription.create');
+    
     Route::get('/stripe', 'StripePaymentController@stripe')->name('stripe.index');
 
     Route::post('/stripe', 'StripePaymentController@stripePost')->name('stripe.post');
