@@ -31,6 +31,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/articles', 'ArticleController@create')->name('articles');
     Route::get('/', 'ArticleController@index')->name('articles.index');
 
+    Route::post('/charge', 'CheckoutController@charge');
+
 });
 
 Auth::routes();
