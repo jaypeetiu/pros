@@ -1,20 +1,11 @@
-@extends('layouts.app')
+@extends("layouts.app")
 
+@section("title") Articles @endsection
 @section("content")
 
 <div class="row mb-4">
     <div class="col-xl-6">
-        @if(Session::has('success'))
-            <div class="alert alert-success alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert">× </button>
-                {{Session::get('success')}}
-            </div>
-        @else
-            <div class="alert alert-danger alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert">× </button>
-                {{Session::get('failed')}}
-            </div>
-        @endif
+        <h2>Articles</h2>
     </div>
 
     <div class="col-xl-6 text-right">

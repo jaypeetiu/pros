@@ -54,7 +54,7 @@
 
   
 
-    <h1>Laravel 5 - Stripe Payment Gateway Integration Example <br/> JProDev.com</h1>
+    <h1>JProDev.com</h1>
 
   
 

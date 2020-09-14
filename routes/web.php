@@ -1,5 +1,7 @@
 <?php
 
+
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +13,10 @@
 |
 */
 
+Route::resource('articles', ArticleController::class);
+/*Route::resource('articles', 'ArticleController@index')->name('articles');*/
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::group(['middleware' => 'auth'], function() {
@@ -23,9 +27,12 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/stripe', 'StripePaymentController@stripe')->name('stripe.index');
 
     Route::post('/stripe', 'StripePaymentController@stripePost')->name('stripe.post');
+
+    Route::get('/articles', 'ArticleController@create')->name('articles');
+    Route::get('/', 'ArticleController@index')->name('articles.index');
+
 });
 
 Auth::routes();
-Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -54,7 +54,7 @@
                             </li>
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                                <a class="nav-link" href="{{ route('articles.index') }}">{{ __('Home') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('stripe.index') }}">{{ __('Profile') }}</a>
@@ -86,7 +86,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="width: 90%;margin: auto;">
             @yield('content')
         </main>
     </div>
